@@ -1,0 +1,133 @@
+\documentclass[18pt,draft]{beamer}
+
+\IfFileExists{skript.sty}{\usepackage{skript}}{\usepackage{../skript}}
+
+
+
+\title[Einfache Wurzeln]{Endliche Spiegelungsgruppen:\\
+Einfache Wurzeln}
+\author{Pavel Zwerschke}
+\date{17. Juni 2019}
+
+\begin{document}
+
+\begin{frame}
+    \maketitle
+\end{frame}
+
+\begin{frame}
+    \tableofcontents
+\end{frame}
+
+\section{Wiederholungen Wurzeln}
+
+\begin{frame}{Wurzel}
+    Spiegelung an Hyperebene \( \scrP \) 
+    lässt sich durch einen Vektor
+    \( 0 \neq r \in \scrP \)
+    beschreiben:
+    \[ s_r(x) = x 
+    - 2\frac{\scalarprod{x}{r}}{\scalarprod{r}{r}} r \]
+    Es gilt \( \forall x \in \scrP: s_r(x) = x \) 
+    und \( s_r(r) = -r \).
+
+    Da Basis \( B \subset \scrP \cup \set{r} \) 
+    existiert, folgt aus linearer Fortsetzung, dass 
+    \( s_r \) Spiegelung an \( \scrP \) darstellt.
+
+    Außerdem gilt \( s_r^2 = 1 \).
+
+    \( \Rightarrow \pm r \) sind Wurzeln von \( s_r \).
+
+    \( \Delta = \set{ r \;\vert\; r \text{ ist Wurzel} } \) 
+    nennen wir Wurzelsystem.
+\end{frame}
+\section{Positive und einfache Wurzeln}
+\begin{frame}{Problem mit Wurzelsystemen}
+    Problem: \( \Delta \) kann sehr groß werden.
+
+    Lösungsansatz: Suchen nach linear unabhängigen 
+    Untermengen von \( \Delta \), mit denen \( \Delta \)
+    konstruiert werden kann.
+\end{frame}
+
+\begin{frame}{\( \Delta_t^+ \) und \( \Delta_t^- \)}
+    Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
+    \forall r \in \Delta \).\\
+    \( \Delta \) lässt sich in zwei Teilmengen 
+    \( \Delta_t^+ = 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
+    und \( \Delta_t^- = 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
+    aufteilen.\\
+    % geometrisch gesehen liegen Delta^+ und Delta^- 
+    % auf unterschiedlichen Hyperebenen von 
+    % t^\bot
+    Sei \( r \in \Delta \). \( \Rightarrow -r \in \Delta \).
+    \( \scalarprod{t}{-r} = -\scalarprod{t}{r} \).\\
+    \( \Rightarrow r \) und \( -r \) sind in 
+    gegensätzlichen Mengen.
+    \[ \Rightarrow \abs{\Delta_t^+} = \abs{\Delta_t^-}. \]
+\end{frame}
+
+\begin{frame}{Definition \( t \)-Basis}
+    \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
+    wenn gilt:
+    \begin{itemize}
+        \item Jedes \( r \in \Delta_t^+ \) ist 
+        eine Linearkombination mit ausschließlich 
+        nichtnegativen Koeffizienten.
+        \item \( \Pi \) ist minimal.
+    \end{itemize}
+    Es existiert mindestens eine \( t \)-Basis, 
+    da \( \Delta \) endlich ist.\\
+    Da \( \Delta_t^+ = - \Delta_t^- \), ist jedes 
+    \( r \in \Delta_t^- \) eine Linearkombination 
+    mit ausschließlich nichtpositiven Koeffizienten.
+\end{frame}
+
+\begin{frame}{Ordnung im Vektorraum}
+    Transitive Ordnung soll folgende Axiome erfüllen:
+    \begin{enumerate}
+        \item \( \forall \lambda, \mu \in V \) gilt 
+        entweder \( \lambda > \mu, \lambda < \mu \) 
+        oder \( \lambda = \mu \).
+        \item \( \forall \lambda, \mu, \nu \in V \) 
+        gilt 
+        \[ \mu < \nu 
+        \Rightarrow \mu + \lambda < \nu + \lambda. \]
+        \item Seien \( \mu, \nu \in V, 
+        c \in \R \setminus \set{0} \).
+        \[ \mu < \nu \Rightarrow 
+        \begin{cases}
+            c \mu < c \nu, & c > 0 \\
+            c \mu > c \nu, & c < 0
+        \end{cases}. \]
+    \end{enumerate}
+\end{frame}
+\begin{frame}{Ordnung im Vektorraum}
+    Wie kommen wir auf so eine Ordnung?
+
+    Wähle geordnete Basis 
+    \( B = (b_1, \ldots, b_n) \). 
+    Seien \( v = \sum_{i=1}^n \lambda_i b_i \)
+    und \( w = \sum_{i=1}^n \mu_i b_i \).
+    
+    Es gelte nun
+    \[ v < w \Leftrightarrow
+    \lambda_k < \mu_k \text{ für kleinstes } k \text{ mit } 
+    \lambda_k \neq \mu_k. \]
+\end{frame}
+
+\begin{frame}{Positives Wurzelsystem}
+    \( \Pi \subset \Phi \) heißt positives 
+    System, wenn es aus allen positiven Wurzeln 
+    aus \( \Phi \) besteht.
+    \( \Phi \) lässt sich aufteilen in 
+    \( \Pi \) und \( -\Pi \), da Wurzeln als Paare 
+    vorkommen.
+    \[ \Pi \cap -\Pi = \emptyset, \Pi \cup -\Pi = \Phi. \]
+\end{frame}
+
+
+\end{document}

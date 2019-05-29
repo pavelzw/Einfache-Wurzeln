@@ -1,4 +1,4 @@
-\documentclass[18pt,draft]{beamer}
+\documentclass[18pt]{beamer}
 
 \IfFileExists{skript.sty}{\usepackage{skript}}{\usepackage{../skript}}
 
@@ -262,6 +262,40 @@ Einfache Wurzeln}
         Es gibt nur eine \( t \)-Basis von \( \Delta \).
     \end{satz}
     % TODO beweis nötig?
+\end{frame}
+
+\section{Beispiele}
+\begin{frame}{Beispiele}
+    Sei \( \mathscr{G} = \mathscr{H}_2^4 \), 
+    die vier Spiegelungen in \( \mathscr{G} \) 
+    generieren es.
+    \[ \Delta = \set{ \pm(1,0), \pm(0,1), (\pm 1, \pm 1) }. \]
+    Wähle \( t = 2( \cos(\frac{3\pi}{8}), \sin(\frac{3\pi}{8}) ) \).
+    \begin{align*}
+        \Rightarrow \Delta_+ 
+        &= \set{(1,0), (1,1), (0,1), (-1,1)}, \\
+        \Pi &= \set{ (1,0), (-1,1) }.
+    \end{align*}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[thin, gray] (-1.5,0) -- (1.5,0);
+            \draw[thin, gray] (0,-1.5) -- (0,1.5);
+            \draw[->] (0,0) -- (0,1);
+            \draw[->] (0,0) -- (0,-1);
+            \draw[->] (0,0) -- (-1,0);
+            \draw[->] (0,0) -- (1,0) node[above right, scale=0.5] {\( r_1 \)};
+            \draw[->] (0,0) -- (-1, 1) node[above right, scale=0.5] {\( r_2 \)};
+            \draw[->] (0,0) -- (-1,-1);
+            \draw[->] (0,0) -- (1,1);
+            \draw[->] (0,0) -- (1,-1);
+            \draw[->] (0,0) -- (0.77, 1.85) node[above right, scale=0.5] {\( t \)};
+            \draw[dashed] (-1.3,-0.77 / 1.85 * -1.3) -- (1.3, -0.77 / 1.85 * 1.3) 
+            node[above right, scale=0.5] {\( t^\bot \)};
+        \end{tikzpicture}
+    \end{center}
 \end{frame}
 
 % todo

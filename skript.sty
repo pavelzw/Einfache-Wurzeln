@@ -5,6 +5,7 @@
 \RequirePackage{graphicx} %Grafiken einbinden
 \RequirePackage{amsmath,amssymb,amsthm}
 \RequirePackage{mathrsfs}
+\RequirePackage{marvosym}
 
 \let\oldforall\forall
 \renewcommand{\forall}{\oldforall \,}
@@ -49,22 +50,9 @@
 \newcommand{\abs}[1]{\left|#1\right|}
 \newcommand{\norm}[1]{\left|\left|#1\right|\right|}
 \newcommand{\gqq}[1]{\glqq{}#1\grqq{}}
-\newcommand{\limes}[1]{\lim\limits_{#1\rightarrow\infty}}
-\newcommand{\limesx}[2]{\lim\limits_{#1\rightarrow{}#2}}
-\newcommand{\limessup}[1]{\limsup\limits_{#1\rightarrow\infty}}
-\newcommand{\limessupx}[2]{\limsup\limits_{#1\rightarrow{}#2}}
-\newcommand{\limesinfx}[2]{\liminf\limits_{#1\rightarrow{}#2}}
-\newcommand{\limesinf}[1]{\liminf\limits_{#1\rightarrow\infty}}
-\newcommand{\existse}{\exists!}
-\newcommand{\inverse}[1]{{#1}^{\minus 1}}
 \newcommand{\abb}[3]{\ensuremath{#1:#2\rightarrow #3}}
-\newcommand{\ddx}[1]{\frac{d}{dx}}
-\newcommand{\dx}{\ensuremath{\; dx}}
-\newcommand{\integralx}[4]{\ensuremath{\int_{#2}^{#3} #1 \;d{#4}}}
-\newcommand{\integral}[3]{\integralx{#1}{#2}{#3}{x}}
 \newcommand{\scalarprod}[2]{\ensuremath{\langle #1, #2 \rangle}}
 \newcommand{\overunderset}[3]{\overset{#1}{\underset{#2}{#3}}}
-\newcommand{\overref}[3]{\overset{\hyperref[#1]{\text{#2}}}{#3}}
 \newcommand{\oversett}[2]{\overset{\text{#1}}{#2}}
 \newcommand{\undersett}[2]{\underset{\text{#1}}{#2}}
 \newcommand{\overunderref}[4]{\overundersett{\hyperref[#1]{\text{#2}}}{\hyperref[#1]{\text{#3}}}{#4}}
@@ -72,25 +60,7 @@
 
 \newcommand{\onlyinsubfile}[1]{#1} %maybe?
 \newcommand{\notinsubfile}[1]{} %maybe?
-\newcommand{\induktion}[3]{
-	\begin{enumerate}
-		\item[IA:]#1
-		\item[IV:]#2
-		\item[IS:]#3
-	\end{enumerate}
-}
-
 \newcommand{\set}[1]{\{#1\}}
 
-\DeclareMathOperator{\IV}{(IV)}
-\DeclareMathOperator{\injektiv}{injektiv}
-\DeclareMathOperator{\surjektiv}{surjektiv}
-\DeclareMathOperator{\bijektiv}{bijektiv}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\rk}{rk}
-\DeclareMathOperator{\height}{ht}
-\DeclareMathOperator{\Bild}{Bild}
-\DeclareMathOperator{\arcosh}{arcosh}
-\DeclareMathOperator{\arsinh}{arsinh}
-\DeclareMathOperator{\Log}{Log}
-\DeclareMathOperator{\inner}{int}

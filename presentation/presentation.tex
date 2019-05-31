@@ -1,6 +1,8 @@
 \documentclass[18pt]{beamer}
 
 \IfFileExists{skript.sty}{\usepackage{skript}}{\usepackage{../skript}}
+\setbeamertemplate{theorems}[numbered]
+
 
 \title[Einfache Wurzeln]{Endliche Spiegelungsgruppen:\\
 Einfache Wurzeln}
@@ -239,11 +241,11 @@ Einfache Wurzeln}
 \end{frame}
 
 \begin{frame}
-    % Theorem 4
-    \begin{theorem} % Theorem 1.4.8
+    % Satz 4
+    \begin{satz} % Theorem 1.4.7
         Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
         \( \Pi \) eine Basis für \( V \).
-    \end{theorem}
+    \end{satz}
 
     \begin{bew}
         \begin{itemize}
@@ -303,14 +305,63 @@ Einfache Wurzeln}
       \end{columns}
 \end{frame}
 
-\section{Weitere Sätze}
+\section{Spiegelungsgruppen generieren}
 \begin{frame}
-    \begin{satz}
+    % Satz 6
+    \begin{satz} % Proposition 4.1.9
         Sei \( S_i \) die Spiegelung an 
         \( r_i \in \Pi = \set{r_1, \ldots, r_n} \).
         Wenn \( r \in \Delta^+ \) und \( r_i \neq r \), 
         dann gilt \( S_i r \in \Delta^+ \).
     \end{satz}
+    % Satz 7
+    \begin{satz} % Proposition 4.1.10
+        Sei \( x \in V\). Dann gibt es ein \( T \in 
+        \mathscr{G}_t := \langle 
+        \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass
+        \( \scalarprod{Tx}{r_i} \geq 0 \;\forall r_i \in \Pi \).
+    \end{satz}
+\end{frame}
+
+\begin{frame}
+    % Satz 8
+    \begin{satz} % Proposition 4.1.11
+        Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
+        \mathscr{G}_t \) so, dass 
+        \( Tr \in \Pi \).
+    \end{satz}
+\end{frame}
+
+\begin{frame}
+    % Satz 9
+    \begin{satz} % Theorem 4.1.12
+        Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
+        erzeugen \( \mathscr{G} \).
+    \end{satz}
+    \begin{bew}
+        Da \( \mathscr{G} = \langle S_r \;\vert\; r \in \Delta \rangle \) 
+        und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
+        \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
+
+        Sei \( r \in \Delta^+ \). Nach Satz 8 gibt es 
+        ein \( T \in \mathscr{G}_t \), sodass 
+        \( r_i := Tr \in \Pi \).
+
+        Es gilt:
+        \[ S_r = T^{-1} S_i T \in \mathscr{G}_t. \]
+        \[ \Rightarrow \mathscr{G} \subset \mathscr{G}_t. \]
+        \[ \Rightarrow \mathscr{G} = \mathscr{G}_t. \]
+    \end{bew}
+\end{frame}
+
+\begin{frame}{Abschluss}
+    Für jede endliche Spiegelungsgruppe 
+    \( \mathscr{G} \) existiert eine Basis 
+    einfache \( t \)-Basis \( \Pi \) 
+    von \( V \). 
+    
+    Die Spiegelungen in 
+    \( \Pi \) erzeugen \( \mathscr{G} \).
 \end{frame}
 
 % todo

@@ -1,6 +1,6 @@
 \documentclass[18pt]{beamer}
 
-\IfFileExists{skript.sty}{\usepackage{skript}}{\usepackage{../skript}}
+\usepackage{skript}
 \setbeamertemplate{theorems}[numbered]
 
 
@@ -8,6 +8,7 @@
 Einfache Wurzeln}
 \author{Pavel Zwerschke}
 \date{17. Juni 2019}
+\titlegraphic{\includegraphics[scale=0.3]{kitlogo_de_rgb.pdf}}
 
 \usetheme{Berlin}
 
@@ -24,19 +25,22 @@ Einfache Wurzeln}
 \section{Wiederholungen Wurzeln}
 
 \begin{frame}{Wurzel}
-    Spiegelung an Hyperebene \( \scrP \) 
+    Spiegelung an Hyperebene \( \mathscr{P} \) 
     lässt sich durch einen Vektor
-    \( 0 \neq r \in \scrP^{\bot} \)
+    \( 0 \neq r \in \mathscr{P}^{\bot} \)
     beschreiben:
     \[ s_r(x) = x 
     - 2\frac{\scalarprod{x}{r}}{\scalarprod{r}{r}} r \]
-    Es gilt \( \forall x \in \scrP: s_r(x) = x \) 
-    und \( s_r(r) = -r \).
+    \pause
+    
+    Es gilt \( \forall x \in \mathscr{P}: s_r(x) = x \) 
+    und \( s_r(r) = -r \). \pause
 
-    Da Basis \( B \subset \scrP \cup \set{r} \) 
+    Da Basis \( B \subset \mathscr{P} \cup \set{r} \) 
     existiert, folgt aus linearer Fortsetzung, dass 
-    \( s_r \) Spiegelung an \( \scrP \) darstellt.
+    \( s_r \) Spiegelung an \( \mathscr{P} \) darstellt.
 
+    \pause
     Außerdem gilt \( s_r^2 = 1 \).
 
     \( \Rightarrow \pm r \) sind Wurzeln von \( s_r \).
@@ -46,7 +50,7 @@ Einfache Wurzeln}
 \end{frame}
 \section{Positive und einfache Wurzeln}
 \begin{frame}{Problem mit Wurzelsystemen}
-    Problem: \( \Delta \) kann sehr groß werden.
+    Problem: \( \Delta \) kann sehr groß werden. \pause
 
     Lösungsansatz: Suchen nach linear unabhängigen 
     Untermengen von \( \Delta \), mit denen \( \Delta \)
@@ -55,20 +59,22 @@ Einfache Wurzeln}
 
 \begin{frame}{\( \Delta_t^+ \) und \( \Delta_t^- \)}
     Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
-    \; \forall r \in \Delta \).\\
+    \; \forall r \in \Delta \).\pause
+
     \( \Delta \) lässt sich in zwei Teilmengen 
     \( \Delta_t^+ = 
     \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
     und \( \Delta_t^- = 
     \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
-    aufteilen.\\
+    aufteilen. \pause
     % geometrisch gesehen liegen Delta^+ und Delta^- 
     % auf unterschiedlichen Hyperebenen von 
     % t^\bot
+
     Sei \( r \in \Delta \). \( \Rightarrow -r \in \Delta \), 
     da \( \scalarprod{t}{-r} = -\scalarprod{t}{r} \).\\
     \( \Rightarrow r \) und \( -r \) sind in 
-    gegensätzlichen Mengen.
+    gegensätzlichen Mengen. \pause
     \[ \Rightarrow \abs{\Delta_t^+} = \abs{\Delta_t^-}. \]
 \end{frame}
 
@@ -81,25 +87,29 @@ Einfache Wurzeln}
         eine Linearkombination mit ausschließlich 
         nichtnegativen Koeffizienten.
         \item \( \Pi \) ist minimal.
-    \end{itemize}
+    \end{itemize} \pause
     Es existiert mindestens eine \( t \)-Basis, 
-    da \( \Delta \) endlich ist.\\
+    da \( \Delta \) endlich ist. \pause
+    
     Da \( \Delta_t^+ = - \Delta_t^- \), ist jedes 
     \( r \in \Delta_t^- \) eine Linearkombination 
-    mit ausschließlich nichtpositiven Koeffizienten.\\
-    \( \Pi \) ist eine Basis. % TODO zu beweisen?
+    mit ausschließlich nichtpositiven Koeffizienten.
+
+    \pause
+    Wird noch gezeigt: \( \Pi \) ist eine Basis.
 \end{frame}
 
-\begin{frame}{Definition \(t\)-positiv}
+\begin{frame}{Definition \(t\)-positiv, \( t \)-negativ}
     \( x \in V \) heißt \(t\)-positiv, wenn 
     die Linearkombination von \(x\) zur 
-    Basis ausschließlich nichtnegativ ist.\\
-    Analog für \( t \)-negativ.\\
-    Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
-    eindeutig.%todo beweisen?
+    Basis ausschließlich nichtnegativ ist.
+
+    Analog für \( t \)-negativ.
+    % Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
+    % eindeutig.
 \end{frame}
 
-\begin{frame}{Orthogonalität} % todo besserer Titel
+\begin{frame}
     \begin{satz} % Proposition 4.1.4
         % satz 1
         Seien \( r_i, r_j \in \Pi, i \neq j \) und 
@@ -115,7 +125,8 @@ Einfache Wurzeln}
         wir schreiben 
         \[ x = \lambda_i r_i - \lambda_j r_j 
         = \sum_{k=1}^m \mu_k r_k \]
-        mit allen \( \mu_i \geq 0 \).
+        mit allen \( \mu_i \geq 0 \). \pause
+
         Fall 1 \( \lambda_i \leq \mu_i \):
         \[ \Leftrightarrow 0 
         = - \lambda_i r_i + \lambda_j r_j 
@@ -132,7 +143,7 @@ Einfache Wurzeln}
         r_j + 
         \sum_{
             \substack{k \in \set{1,\ldots, m}\\k \neq i,j}}
-        \mu_k r_k \]
+        \mu_k r_k. \] \pause
         Dauraus folgt 
         \[ 0 = \scalarprod{t}{ 
             (\mu_i - \lambda_i) r_i + (\mu_j + \lambda_j) r_j 
@@ -147,7 +158,7 @@ Einfache Wurzeln}
 
 \begin{frame}
     \begin{bew}
-        Wenn \( \lambda_i > \mu_i \), dann gilt 
+        Fall 2: \( \lambda_i > \mu_i \): 
         \[ (\lambda_i - \mu_i) r_i
         = (\mu_j + \lambda_j) r_j 
         + \sum_{\substack{k \in \set{1,\ldots, m}\\k \neq i,j}}
@@ -172,14 +183,14 @@ Einfache Wurzeln}
         Dann ist \( S_i r_i \in \Delta_t^+ \) und 
         \( \scalarprod{r_i}{r_j} \leq 0 \).
     \end{satz}
-
+    \pause
     \begin{bew}
         Da \( S_i r_j \in \Delta \), ist \( S_i r_j \) 
         entweder positiv oder negativ. Da 
         \[ S_i r_j = r_j - 2 \scalarprod{r_j}{r_i} r_i, \]
         mit \( \lambda_j = 1 \), muss 
         \( \lambda_i \geq 0 \), da sonst 
-        \( S_i r_i \notin \Delta \). 
+        \( S_i r_i \notin \Delta \). \pause
 
         \( \Rightarrow \scalarprod{r_i}{r_j} \leq 0 
         \Rightarrow S_i r_j \) 
@@ -195,11 +206,11 @@ Einfache Wurzeln}
     % satz 3
     \begin{satz} % Proposition 1.4.6
         Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
-        Seite einer Hyperebene \( \scrP \). \\
+        Seite einer Hyperebene \( \mathscr{P} \). \\
         Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
         \( i \neq j \), dann ist \( \set{x_1, \ldots, x_m} \) 
         linear unabhängig.
-    \end{satz}
+    \end{satz} \pause
 
     \begin{bew}
         Wenn das der Fall wäre, dann gäbe es 
@@ -216,14 +227,18 @@ Einfache Wurzeln}
     \begin{bew}
         Dann gilt 
         \begin{align*}
-            0 \leq \norm{\sum_{i=1}^k \lambda_i x_i}^2 
+            \onslide<1->{0 \leq \norm{\sum_{i=1}^k \lambda_i x_i}^2 
             &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
-            \sum_{j=1}^{k} \lambda_{j} x_{j}} \\
-            &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
-            \sum_{j=k+1}^{m} \mu_{j} x_{j}} \\
-            &= \sum_{i=1}^{k} \sum_{j=k+1}^{m} \lambda_{i} \mu_{j}
-            \scalarprod{x_i}{x_j} 
-            \leq 0. % nach Voraussetzung
+            \sum_{j=1}^{k} \lambda_{j} x_{j}} \\}
+            \onslide<2->{
+                &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
+                \sum_{j=k+1}^{m} \mu_{j} x_{j}} \\
+            }
+            \onslide<3>{
+                &= \sum_{i=1}^{k} \sum_{j=k+1}^{m} \lambda_{i} \mu_{j}
+                \scalarprod{x_i}{x_j} 
+                \leq 0. % nach Voraussetzung
+            }
         \end{align*}
         
         \renewcommand{\qedsymbol}{}
@@ -235,6 +250,7 @@ Einfache Wurzeln}
         \[ 0 = \scalarprod{\sum_{i=1}^{k} \lambda_i x_i}{x} 
         = \sum_{i=1}^k \lambda_i \scalarprod{x_i}{x} > 0. \text{ \Lightning{}} \]
         % da manche lambda_i > 0
+        \pause
         Deshalb muss \( \set{x_1, \ldots, x_m} \) linear 
         unabhängig sein.
     \end{bew}
@@ -246,14 +262,14 @@ Einfache Wurzeln}
         Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
         \( \Pi \) eine Basis für \( V \).
     \end{satz}
-
+    \pause
     \begin{bew}
         \begin{itemize}
             \item \( \Delta \) erzeugt \( V \). (s. Vortrag \gqq{Wurzelsysteme})\\
             Da jedes \( r \in \Delta \) eine Linearkombination von \( \Pi \) ist, 
-            ist \( \Pi \) Erzeugendensystem.
-            \item \( \Delta \) ist nach Satz 2 und 3 linear unabhängig.
-        \end{itemize}
+            ist \( \Pi \) Erzeugendensystem. \pause
+            \item<2-> \( \Delta \) ist nach Satz 2 und 3 linear unabhängig.
+        \end{itemize} \pause
         \( \Rightarrow \Pi \) ist eine Basis von \(V\).
     \end{bew}
 \end{frame}
@@ -272,14 +288,14 @@ Einfache Wurzeln}
     die vier Spiegelungen in \( \mathscr{G} \) 
     generieren es.
     \[ \Delta = \set{ \pm(1,0), \pm(0,1), (\pm 1, \pm 1) }. \]
-    Wähle \( t = 2( \cos(\frac{3\pi}{8}), \sin(\frac{3\pi}{8}) ) \).
+    \onslide<2->{Wähle \( t = 2( \cos(\frac{3\pi}{8}), \sin(\frac{3\pi}{8}) ) \).}
 
     \begin{columns}[c]
         \begin{column}{0.7\textwidth}
             \begin{align*}
-                \Rightarrow \Delta_+ 
-                &= \set{(1,0), (1,1), (0,1), (-1,1)}, \\
-                \Pi &= \set{ (1,0), (-1,1) }.
+                \onslide<3->{\Rightarrow \Delta_+ 
+                &= \set{(1,0), (1,1), (0,1), (-1,1)}, \\}
+                \onslide<4->{\Pi &= \set{ (1,0), (-1,1) }.}
             \end{align*}
         \end{column}
         \begin{column}{0.3\textwidth}
@@ -290,15 +306,16 @@ Einfache Wurzeln}
                 \draw[->] (0,0) -- (0,1) node[right, scale=0.5] {\( 1 \)};
                 \draw[->] (0,0) -- (0,-1);
                 \draw[->] (0,0) -- (-1,0);
-                \draw[->] (0,0) -- (1,0) node[above right, scale=0.5] {\( r_1 \)}
-                node[above left, scale=0.5] {\( 1 \)};
-                \draw[->] (0,0) -- (-1, 1) node[above right, scale=0.5] {\( r_2 \)};
+                \draw[->] (0,0) -- (1,0) node[above left, scale=0.5] {\( 1 \)};
+                \onslide<4->{\draw (1,0) node[above right, scale=0.5] {\( r_1 \)};}
+                \draw[->] (0,0) -- (-1, 1);
+                \onslide<4->{\draw (-1, 1) node[above right, scale=0.5] {\( r_2 \)};}
                 \draw[->] (0,0) -- (-1,-1);
                 \draw[->] (0,0) -- (1,1);
                 \draw[->] (0,0) -- (1,-1);
-                \draw[->] (0,0) -- (0.77, 1.85) node[above right, scale=0.5] {\( t \)};
-                \draw[dashed] (-1.3,-0.77 / 1.85 * -1.3) -- (1.3, -0.77 / 1.85 * 1.3) 
-                node[above right, scale=0.5] {\( t^\bot \)};
+                \onslide<2->{\draw[->] (0,0) -- (0.77, 1.85) node[above right, scale=0.5] {\( t \)};}
+                \onslide<2->{\draw[dashed] (-1.3,-0.77 / 1.85 * -1.3) -- (1.3, -0.77 / 1.85 * 1.3) 
+                node[above right, scale=0.5] {\( t^\bot \)};}
             \end{tikzpicture}
           \end{figure}
         \end{column}
@@ -314,6 +331,7 @@ Einfache Wurzeln}
         Wenn \( r \in \Delta^+ \) und \( r_i \neq r \), 
         dann gilt \( S_i r \in \Delta^+ \).
     \end{satz}
+    \pause
     % Satz 7
     \begin{satz} % Proposition 4.1.10
         Sei \( x \in V\). Dann gibt es ein \( T \in 
@@ -338,15 +356,18 @@ Einfache Wurzeln}
         Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
         erzeugen \( \mathscr{G} \).
     \end{satz}
+    \pause
     \begin{bew}
         Da \( \mathscr{G} = \langle S_r \;\vert\; r \in \Delta \rangle \) 
         und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
         \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
 
+        \pause
         Sei \( r \in \Delta^+ \). Nach Satz 8 gibt es 
         ein \( T \in \mathscr{G}_t \), sodass 
         \( r_i := Tr \in \Pi \).
 
+        \pause
         Es gilt:
         \[ S_r = T^{-1} S_i T \in \mathscr{G}_t. \]
         \[ \Rightarrow \mathscr{G} \subset \mathscr{G}_t. \]
@@ -359,11 +380,10 @@ Einfache Wurzeln}
     \( \mathscr{G} \) existiert eine Basis 
     einfache \( t \)-Basis \( \Pi \) 
     von \( V \). 
+    \pause
     
     Die Spiegelungen in 
     \( \Pi \) erzeugen \( \mathscr{G} \).
 \end{frame}
-
-% todo
 
 \end{document}

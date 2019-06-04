@@ -1,4 +1,4 @@
-\documentclass[18pt]{beamer}
+\documentclass[18pt,handout]{beamer}
 
 \usepackage{skript}
 \setbeamertemplate{theorems}[numbered]
@@ -112,6 +112,7 @@ Einfache Wurzeln}
 \begin{frame}
     \begin{satz} % Proposition 4.1.4
         % satz 1
+        % nicht unbedingt beweisen
         Seien \( r_i, r_j \in \Pi, i \neq j \) und 
         \( \lambda_i, \lambda_j \in \R_+ \). 
         Der Vektor \( x = \lambda_i r_i - \lambda_j r_j \) 
@@ -174,9 +175,10 @@ Einfache Wurzeln}
     \end{bew}
 \end{frame}
 
-\begin{frame}{Spiegelung einer Wurzel}
+\begin{frame}
     % satz 2
-    \begin{satz} % Proposition 1.4.5
+    \begin{satz} % Proposition 4.1.5
+        % beweis so kurz, kann man kurz anschreiben
         Seien \( r_i, r_j \in \Pi, i \neq j \), es 
         sei \( S_i \) die Spiegelung an \( r_i \). 
 
@@ -205,6 +207,7 @@ Einfache Wurzeln}
 \begin{frame}
     % satz 3
     \begin{satz} % Proposition 1.4.6
+        % beweis mittels bild?
         Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
         Seite einer Hyperebene \( \mathscr{P} \). \\
         Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
@@ -259,6 +262,7 @@ Einfache Wurzeln}
 \begin{frame}
     % Satz 4
     \begin{satz} % Theorem 1.4.7
+        % beweis anschreiben
         Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
         \( \Pi \) eine Basis für \( V \).
     \end{satz}
@@ -277,9 +281,9 @@ Einfache Wurzeln}
 \begin{frame}
     % Satz 5
     \begin{satz} % Proposition 4.1.8
+        % beweis anschreiben
         Es gibt nur eine \( t \)-Basis von \( \Delta \).
     \end{satz}
-    % TODO beweis nötig?
 \end{frame}
 
 \section{Beispiele}
@@ -326,24 +330,27 @@ Einfache Wurzeln}
 \begin{frame}
     % Satz 6
     \begin{satz} % Proposition 4.1.9
+        % nicht unbedingt beweisen
         Sei \( S_i \) die Spiegelung an 
         \( r_i \in \Pi = \set{r_1, \ldots, r_n} \).
         Wenn \( r \in \Delta^+ \) und \( r_i \neq r \), 
         dann gilt \( S_i r \in \Delta^+ \).
     \end{satz}
     \pause
-    % Satz 7
-    \begin{satz} % Proposition 4.1.10
-        Sei \( x \in V\). Dann gibt es ein \( T \in 
-        \mathscr{G}_t := \langle 
-        \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass
-        \( \scalarprod{Tx}{r_i} \geq 0 \;\forall r_i \in \Pi \).
-    \end{satz}
+ %   % Satz 7
+%    \begin{satz} % Proposition 4.1.10
+  %      % gar nicht
+ %       Sei \( x \in V\). Dann gibt es ein \( T \in 
+ %       \mathscr{G}_t := \langle 
+  %      \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass
+   %     \( \scalarprod{Tx}{r_i} \geq 0 \;\forall r_i \in \Pi \).
+  %  \end{satz}
 \end{frame}
 
 \begin{frame}
-    % Satz 8
+    % Satz 7
     \begin{satz} % Proposition 4.1.11
+        % nicht so interessant, nur satz hinschreiben
         Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
         \mathscr{G}_t \) so, dass 
         \( Tr \in \Pi \).
@@ -351,8 +358,9 @@ Einfache Wurzeln}
 \end{frame}
 
 \begin{frame}
-    % Satz 9
+    % Satz 8
     \begin{satz} % Theorem 4.1.12
+        % wichtiger, beweisen
         Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
         erzeugen \( \mathscr{G} \).
     \end{satz}
@@ -363,7 +371,7 @@ Einfache Wurzeln}
         \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
 
         \pause
-        Sei \( r \in \Delta^+ \). Nach Satz 8 gibt es 
+        Sei \( r \in \Delta^+ \). Nach Satz 7 gibt es 
         ein \( T \in \mathscr{G}_t \), sodass 
         \( r_i := Tr \in \Pi \).
 

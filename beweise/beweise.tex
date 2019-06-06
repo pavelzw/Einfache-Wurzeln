@@ -3,6 +3,40 @@
 
 \begin{document}
 
+\begin{defi}[\( \Delta_t^+ \) und \( \Delta_t^- \)]
+    Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
+    \; \forall r \in \Delta \).
+
+    \( \Delta \) lässt sich in zwei Teilmengen 
+    \( \Delta_t^+ := 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
+    und \( \Delta_t^- := 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
+    aufteilen. 
+\end{defi}
+
+\begin{defi}[\( t \)-Basis]
+    \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
+    wenn gilt:
+    \begin{itemize}
+        \item Jedes \( r \in \Delta_t^+ \) ist 
+        eine Linearkombination mit ausschließlich 
+        nichtnegativen Koeffizienten.
+        \item \( \Pi \) ist minimal.
+    \end{itemize}
+    Es existiert mindestens eine \( t \)-Basis, 
+    da \( \Delta \) endlich ist.
+\end{defi}
+
+\begin{defi}[\( t \)-positiv]
+    \( x \in V \) heißt \(t\)-positiv, wenn 
+    die Linearkombination von \(x\) zur 
+    Basis ausschließlich nichtnegativ ist.
+
+    Analog für \( t \)-negativ.
+\end{defi}
+
+% nicht unbedingt beweisen
 \begin{satz} % Proposition 4.1.4
     Seien \( r_i, r_j \in \Pi, i \neq j \) und 
     \( \lambda_i, \lambda_j \in \R_+ \). 

@@ -1,4 +1,4 @@
-\documentclass[18pt,handout]{beamer}
+\documentclass[18pt]{beamer}
 
 \usepackage{skript}
 \setbeamertemplate{theorems}[numbered]
@@ -58,15 +58,17 @@ Einfache Wurzeln}
 \end{frame}
 
 \begin{frame}{\( \Delta_t^+ \) und \( \Delta_t^- \)}
-    Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
-    \; \forall r \in \Delta \).\pause
-
-    \( \Delta \) lässt sich in zwei Teilmengen 
-    \( \Delta_t^+ = 
-    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
-    und \( \Delta_t^- = 
-    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
-    aufteilen. \pause
+    \begin{defi}
+        Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
+        \; \forall r \in \Delta \).\pause
+        \( \Delta \) lässt sich in zwei Teilmengen 
+        \( \Delta_t^+ := 
+        \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
+        und \( \Delta_t^- := 
+        \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
+        aufteilen. \pause
+    \end{defi}
+    
     % geometrisch gesehen liegen Delta^+ und Delta^- 
     % auf unterschiedlichen Hyperebenen von 
     % t^\bot
@@ -80,16 +82,19 @@ Einfache Wurzeln}
 
 \section{Einfache Wurzelsysteme}
 \begin{frame}{Definition \( t \)-Basis}
-    \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
-    wenn gilt:
-    \begin{itemize}
-        \item Jedes \( r \in \Delta_t^+ \) ist 
-        eine Linearkombination mit ausschließlich 
-        nichtnegativen Koeffizienten.
-        \item \( \Pi \) ist minimal.
-    \end{itemize} \pause
-    Es existiert mindestens eine \( t \)-Basis, 
-    da \( \Delta \) endlich ist. \pause
+    \begin{defi}
+        \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
+        wenn gilt:
+        \begin{itemize}
+            \item Jedes \( r \in \Delta_t^+ \) ist 
+            eine Linearkombination mit ausschließlich 
+            nichtnegativen Koeffizienten.
+            \item \( \Pi \) ist minimal.
+        \end{itemize} \pause
+        Es existiert mindestens eine \( t \)-Basis, 
+        da \( \Delta \) endlich ist. \pause
+    \end{defi}
+    
     
     Da \( \Delta_t^+ = - \Delta_t^- \), ist jedes 
     \( r \in \Delta_t^- \) eine Linearkombination 
@@ -100,11 +105,13 @@ Einfache Wurzeln}
 \end{frame}
 
 \begin{frame}{Definition \(t\)-positiv, \( t \)-negativ}
-    \( x \in V \) heißt \(t\)-positiv, wenn 
-    die Linearkombination von \(x\) zur 
-    Basis ausschließlich nichtnegativ ist.
+    \begin{defi}
+        \( x \in V \) heißt \(t\)-positiv, wenn 
+        die Linearkombination von \(x\) zur 
+        Basis ausschließlich nichtnegativ ist.
 
-    Analog für \( t \)-negativ.
+        Analog für \( t \)-negativ.
+    \end{defi}
     % Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
     % eindeutig.
 \end{frame}
@@ -286,7 +293,6 @@ Einfache Wurzeln}
     \end{satz}
 \end{frame}
 
-\section{Beispiele}
 \begin{frame}{Beispiele}
     Sei \( \mathscr{G} = \mathscr{H}_2^4 \), 
     die vier Spiegelungen in \( \mathscr{G} \) 

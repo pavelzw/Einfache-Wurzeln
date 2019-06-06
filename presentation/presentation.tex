@@ -138,7 +138,6 @@ Einfache Wurzeln}
 
     % satz 6
     \begin{satz} % Proposition 1.4.6
-        % beweis mittels bild?
         Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
         Seite einer Hyperebene \( \mathscr{P} \). \\
         Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
@@ -148,75 +147,12 @@ Einfache Wurzeln}
 \end{frame}
 
 \begin{frame}
-     \pause
-
-    \begin{bew}
-        Wenn es linear abhängig wäre, dann gäbe es 
-        \( \lambda_i, \mu_i \geq 0 \) mit 
-        manchen \( \lambda_i > 0 \), sodass 
-        \[ \sum_{i=1}^k \lambda_i x_i 
-        = \sum_{i=k+1}^m \mu_i x_i. \]
-
-        \renewcommand{\qedsymbol}{}
-    \end{bew}
-\end{frame}
-
-\begin{frame}
-    \begin{bew}
-        Dann gilt 
-        \begin{align*}
-            \onslide<1->{0 \leq \norm{\sum_{i=1}^k \lambda_i x_i}^2 
-            &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
-            \sum_{j=1}^{k} \lambda_{j} x_{j}} \\}
-            \onslide<2->{
-                &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
-                \sum_{j=k+1}^{m} \mu_{j} x_{j}} \\
-            }
-            \onslide<3>{
-                &= \sum_{i=1}^{k} \sum_{j=k+1}^{m} \lambda_{i} \mu_{j}
-                \scalarprod{x_i}{x_j} 
-                \leq 0. % nach Voraussetzung
-            }
-        \end{align*}
-        
-        \renewcommand{\qedsymbol}{}
-    \end{bew}
-\end{frame}
-\begin{frame}
-    \begin{bew}
-        Da alle auf derselben Seite der Hyperebene sind, 
-        gibt es ein \( x \in V: \scalarprod{x_i}{x} > 0 
-        \;\forall i \in \set{1,\ldots, m} \).
-        Es gilt jedoch nun 
-        \[ 0 = \scalarprod{\sum_{i=1}^{k} \lambda_i x_i}{x} 
-        = \sum_{i=1}^k \lambda_i \scalarprod{x_i}{x} > 0. \text{ \Lightning{}} \]
-        % da manche lambda_i > 0
-        \pause
-        Deshalb muss \( \set{x_1, \ldots, x_m} \) linear 
-        unabhängig sein.
-    \end{bew}
-\end{frame}
-
-\begin{frame}
     % Satz 7
     \begin{satz} % Theorem 1.4.7
         % beweis anschreiben
         Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
         \( \Pi \) eine Basis für \( V \).
-    \end{satz}
-    \pause
-    \begin{bew}
-        \begin{itemize}
-            \item \( \Delta \) erzeugt \( V \). (s. Vortrag \gqq{Wurzelsysteme})\\
-            Da jedes \( r \in \Delta \) eine Linearkombination von \( \Pi \) ist, 
-            ist \( \Pi \) Erzeugendensystem. \pause
-            \item<2-> \( \Delta \) ist nach Satz 2 und 3 linear unabhängig.
-        \end{itemize} \pause
-        \( \Rightarrow \Pi \) ist eine Basis von \(V\).
-    \end{bew}
-\end{frame}
-
-\begin{frame}
+    \end{satz}\pause
     % Satz 8
     \begin{satz} % Proposition 4.1.8
         % beweis anschreiben
@@ -282,42 +218,19 @@ Einfache Wurzeln}
   %      \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass
    %     \( \scalarprod{Tx}{r_i} \geq 0 \;\forall r_i \in \Pi \).
   %  \end{satz}
-\end{frame}
-
-\begin{frame}
     % Satz 10
     \begin{satz} % Proposition 4.1.11
         % nicht so interessant, nur satz hinschreiben
         Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
         \mathscr{G}_t \) so, dass 
         \( Tr \in \Pi \).
-    \end{satz}
-\end{frame}
-
-\begin{frame}
+    \end{satz}\pause
     % Satz 11
     \begin{satz} % Theorem 4.1.12
         % wichtiger, beweisen
         Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
         erzeugen \( \mathscr{G} \).
     \end{satz}
-    \pause
-    \begin{bew}
-        Da \( \mathscr{G} = \langle S_r \;\vert\; r \in \Delta \rangle \) 
-        und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
-        \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
-
-        \pause
-        Sei \( r \in \Delta^+ \). Nach Satz 7 gibt es 
-        ein \( T \in \mathscr{G}_t \), sodass 
-        \( r_i := Tr \in \Pi \).
-
-        \pause
-        Es gilt:
-        \[ S_r = T^{-1} S_i T \in \mathscr{G}_t. \]
-        \[ \Rightarrow \mathscr{G} \subset \mathscr{G}_t. \]
-        \[ \Rightarrow \mathscr{G} = \mathscr{G}_t. \]
-    \end{bew}
 \end{frame}
 
 \begin{frame}{Abschluss}

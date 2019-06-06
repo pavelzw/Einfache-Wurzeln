@@ -80,6 +80,36 @@
     linear unabhängig.
 \end{satz}
 
+\begin{bew}
+    Wenn es linear abhängig wäre, dann gäbe es 
+    \( \lambda_i, \mu_i \geq 0 \) mit 
+    manchen \( \lambda_i > 0 \), sodass 
+    \[ \sum_{i=1}^k \lambda_i x_i 
+    = \sum_{i=k+1}^m \mu_i x_i. \]
+
+    Dann gilt 
+    \begin{align*}
+        0 \leq \norm{\sum_{i=1}^k \lambda_i x_i}^2 
+        &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
+        \sum_{j=1}^{k} \lambda_{j} x_{j}} \\
+        &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
+        \sum_{j=k+1}^{m} \mu_{j} x_{j}} \\
+        &= \sum_{i=1}^{k} \sum_{j=k+1}^{m} \lambda_{i} \mu_{j}
+        \scalarprod{x_i}{x_j} 
+        \leq 0. % nach Voraussetzung
+    \end{align*}
+
+    Da alle auf derselben Seite der Hyperebene sind, 
+    gibt es ein \( x \in V: \scalarprod{x_i}{x} > 0 
+    \;\forall i \in \set{1,\ldots, m} \).
+    Es gilt jedoch nun 
+    \[ 0 = \scalarprod{\sum_{i=1}^{k} \lambda_i x_i}{x} 
+    = \sum_{i=1}^k \lambda_i \scalarprod{x_i}{x} > 0. \text{ \Lightning{}} \]
+    % da manche lambda_i > 0
+    Deshalb muss \( \set{x_1, \ldots, x_m} \) linear 
+    unabhängig sein.
+\end{bew}
+
 \begin{satz} % Theorem 1.4.7
     Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
     \( \Pi \) eine Basis für \( V \).

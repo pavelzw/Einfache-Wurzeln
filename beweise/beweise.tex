@@ -1,4 +1,4 @@
-\documentclass[]{article}
+\documentclass{article}
 \usepackage{../presentation/skript}
 
 \begin{document}
@@ -72,9 +72,10 @@
 \end{bem}
 
 \begin{satz} % Proposition 1.4.6
-    % beweis mittels bild?
     Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
-    Seite einer Hyperebene \( \mathscr{P} \). \\
+    Seite einer Hyperebene \( \mathscr{P} \), 
+    d. h. \( \langle x_i, x \rangle > 0 \;\forall i \) für 
+    ein \( x\in V \). \\
     Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
     \( i \neq j \), dann ist \( \set{x_1, \ldots, x_m} \) 
     linear unabhängig.
@@ -121,7 +122,7 @@
 
     \( \Delta = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
     von \( \mathscr{P} \). Nach Satz 2 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
-    \( \forall i \neq j \). \( \oversett{Satz 3}{\Rightarrow} \Delta \) 
+    \( \forall i \neq j \). \( \oversett{Satz 5}{\Rightarrow} \Delta \) 
     ist linear unabhängig.
 
     \( \Rightarrow \Pi \) ist eine Basis von \(V\).
@@ -131,7 +132,7 @@
     Es gibt nur eine \( t \)-Basis von \( \Delta \).
 \end{satz}
 \begin{bew}
-    Es seien \( \Pi_1, \Pi_2 t \)-Basen.\\
+    Es seien \( \Pi_1, \Pi_2\ t \)-Basen.\\
     Jede Wurzel in \( \Pi_1 \) ist eine nichtnegative 
     Linearkombination an Elementen in \( \Pi_2 \).\\
     \( \Rightarrow \) die Basiswechselmatrix \(A\) von 
@@ -174,7 +175,8 @@
 \begin{satz} % Proposition 4.1.11
     % nicht so interessant, nur satz hinschreiben
     Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
-    \mathscr{G}_t \) so, dass 
+    \mathscr{G}_t := \langle 
+    \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass 
     \( Tr \in \Pi \).
 \end{satz}
 

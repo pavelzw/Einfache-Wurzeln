@@ -1,8 +1,43 @@
-\documentclass[]{article}
+\documentclass{article}
+\usepackage[margin=2cm]{geometry}
 \usepackage{../presentation/skript}
 
 \begin{document}
 
+\begin{defi}[\( \Delta_t^+ \) und \( \Delta_t^- \)]
+    Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
+    \; \forall r \in \Delta \).
+
+    \( \Delta \) lässt sich in zwei Teilmengen 
+    \( \Delta_t^+ := 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} > 0} \) 
+    und \( \Delta_t^- := 
+    \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
+    aufteilen. 
+\end{defi}
+
+\begin{defi}[\( t \)-Basis]
+    \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
+    wenn gilt:
+    \begin{itemize}
+        \item Jedes \( r \in \Delta_t^+ \) ist 
+        eine Linearkombination mit ausschließlich 
+        nichtnegativen Koeffizienten.
+        \item \( \Pi \) ist minimal.
+    \end{itemize}
+    Es existiert mindestens eine \( t \)-Basis, 
+    da \( \Delta \) endlich ist.
+\end{defi}
+
+\begin{defi}[\( t \)-positiv]
+    \( x \in V \) heißt \(t\)-positiv, wenn 
+    die Linearkombination von \(x\) zur 
+    Basis ausschließlich nichtnegativ ist.
+
+    Analog für \( t \)-negativ.
+\end{defi}
+
+% nicht unbedingt beweisen
 \begin{satz} % Proposition 4.1.4
     Seien \( r_i, r_j \in \Pi, i \neq j \) und 
     \( \lambda_i, \lambda_j \in \R_+ \). 
@@ -38,13 +73,44 @@
 \end{bem}
 
 \begin{satz} % Proposition 1.4.6
-    % beweis mittels bild?
     Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
-    Seite einer Hyperebene \( \mathscr{P} \). \\
+    Seite einer Hyperebene \( \mathscr{P} \), 
+    d. h. \( \langle x_i, x \rangle > 0 \;\forall i \) für 
+    ein \( x\in V \). \\
     Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
     \( i \neq j \), dann ist \( \set{x_1, \ldots, x_m} \) 
     linear unabhängig.
 \end{satz}
+
+\begin{bew}
+    Wenn es linear abhängig wäre, dann gäbe es 
+    \( \lambda_i, \mu_i \geq 0 \) mit 
+    manchen \( \lambda_i > 0 \), sodass 
+    \[ \sum_{i=1}^k \lambda_i x_i 
+    = \sum_{i=k+1}^m \mu_i x_i. \]
+
+    Dann gilt 
+    \begin{align*}
+        0 \leq \norm{\sum_{i=1}^k \lambda_i x_i}^2 
+        &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
+        \sum_{j=1}^{k} \lambda_{j} x_{j}} \\
+        &= \scalarprod{\sum_{i=1}^{k} \lambda_{i} x_{i}}{
+        \sum_{j=k+1}^{m} \mu_{j} x_{j}} \\
+        &= \sum_{i=1}^{k} \sum_{j=k+1}^{m} \lambda_{i} \mu_{j}
+        \scalarprod{x_i}{x_j} 
+        \leq 0. % nach Voraussetzung
+    \end{align*}
+
+    Da alle auf derselben Seite der Hyperebene sind, 
+    gibt es ein \( x \in V: \scalarprod{x_i}{x} > 0 
+    \;\forall i \in \set{1,\ldots, m} \).
+    Es gilt jedoch nun 
+    \[ 0 = \scalarprod{\sum_{i=1}^{k} \lambda_i x_i}{x} 
+    = \sum_{i=1}^k \lambda_i \scalarprod{x_i}{x} > 0. \text{ \Lightning{}} \]
+    % da manche lambda_i > 0
+    Deshalb muss \( \set{x_1, \ldots, x_m} \) linear 
+    unabhängig sein.
+\end{bew}
 
 \begin{satz} % Theorem 1.4.7
     Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
@@ -55,9 +121,9 @@
     Da jedes \( r \in \Delta \) eine Linearkombination von \( \Pi \) ist, 
     ist \( \Pi \) Erzeugendensystem.
 
-    \( \Delta = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
-    von \( \mathscr{P} \). Nach Satz 2 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
-    \( \forall i \neq j \). \( \oversett{Satz 3}{\Rightarrow} \Delta \) 
+    \( \Delta_t^+ = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
+    von \( \mathscr{P} \). Nach Satz 5 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
+    \( \forall i \neq j \). \( \oversett{Satz 6}{\Rightarrow} \Delta \) 
     ist linear unabhängig.
 
     \( \Rightarrow \Pi \) ist eine Basis von \(V\).
@@ -67,7 +133,7 @@
     Es gibt nur eine \( t \)-Basis von \( \Delta \).
 \end{satz}
 \begin{bew}
-    Es seien \( \Pi_1, \Pi_2 t \)-Basen.\\
+    Es seien \( \Pi_1, \Pi_2\ t \)-Basen.\\
     Jede Wurzel in \( \Pi_1 \) ist eine nichtnegative 
     Linearkombination an Elementen in \( \Pi_2 \).\\
     \( \Rightarrow \) die Basiswechselmatrix \(A\) von 
@@ -75,28 +141,31 @@
     Analog hat \( B := A^{-1} \) auch nur nichtnegative 
     Einträge. \\
     Seien \( a_1, \ldots, a_n \) die Zeilen von \(A\) 
-    und \( b_1, \ldots, b_n \) die Zeilen von \(B\).
+    und \( b_1, \ldots, b_n \) die Spalten von \(B\).
     Da \( AB = I_n \), gilt 
     \[ a_1^t \bot b_i \;\forall i \in \set{2, \ldots, n}. \]
     (Einträge der Matrixmultiplikation ist Skalarprodukt 
     von \(i\)-ter Zeile und \(j\)-ter Spalte der Matrizen).
 
-    Es gibt maximal einen Index \( j \), für den der 
-    \( j \)-te Eintrag in \( b_2, \ldots, b_n \) 
-    \( 0 \) ist, sonst wäre es linear abhängig.
+    Maximal eine Zeile \( j \), für die Eintrag in allen 
+    \( b_2, \ldots, b_n \) gleich Null, sonst wäre 
+    \(B\) linear abhängig.
+
     \( \Rightarrow a_1 \) hat maximal einen 
-    nichtnull Eintrag (da \(a_1\) positiv).\\
+    nichtnull Eintrag (da \(a_1\) und \( b_2, \ldots, b_n \) nichtnegativ).\\
     Analog für \( a_i, i \in \set{1, \ldots, n} \).
 
     Da \(A\) bijektiv ist, hat \(A\) in jeder Zeile und 
     Spalte jeweils einen \\
     nichtnegativen Eintrag.
 
-    Da kein \( \lambda \cdot r \) eine Wurzel ist 
-    außer \( \lambda = 1 \), ist \( A \) eine 
-    Permutationsmatrix.
+    Da kein \( \lambda \cdot r \) nur für 
+    \( \lambda = 1 \) eine Wurzel ist, 
+    ist \( A \) eine Permutationsmatrix.
     \[ \Rightarrow \Pi_1 = \Pi_2. \]
 \end{bew}
+
+Beispiele
 
 \begin{satz} % Proposition 4.1.9
     % nicht unbedingt beweisen
@@ -110,7 +179,8 @@
 \begin{satz} % Proposition 4.1.11
     % nicht so interessant, nur satz hinschreiben
     Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
-    \mathscr{G}_t \) so, dass 
+    \mathscr{G}_t := \langle 
+    \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass 
     \( Tr \in \Pi \).
 \end{satz}
 
@@ -125,12 +195,16 @@
     und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
     \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
 
-    Sei \( r \in \Delta^+ \). Nach Satz 7 gibt es 
+    Sei \( r \in \Delta^+ \). Nach Satz 10 gibt es 
     ein \( T \in \mathscr{G}_t \), sodass 
-    \( r_i := Tr \in \Pi \).
+    \( x := Tr \in \Pi \).\\
 
-    Es gilt nach letztem Vortrag (Satz 2.5):
-    \[ S_r = T^{-1} S_i T \in \mathscr{G}_t. \]
+    Erinnerung letzter Vortrag: (Satz 2.5)\\
+    Sei \( r \in V \) Wurzel von \( \mathscr{G} \). 
+    Für \( T \in \mathscr{G} \) ist \( Tr \) Wurzel von \(\mathscr{G}\), 
+    wenn \( Tr = x \), dann \( S_x = T S_r T^{-1} \in \mathscr{G} \).
+
+    \[ S_x = T^{-1} S_r T \in \mathscr{G}_t. \]
     \[ \Rightarrow \mathscr{G} \subset \mathscr{G}_t. \]
     Da \( \mathscr{G} \supset \mathscr{G}_t \) sowieso klar, gilt
     \[ \Rightarrow \mathscr{G} = \mathscr{G}_t. \]

@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[margin=2cm]{geometry}
 \usepackage{../presentation/skript}
 
 \begin{document}
@@ -120,9 +121,9 @@
     Da jedes \( r \in \Delta \) eine Linearkombination von \( \Pi \) ist, 
     ist \( \Pi \) Erzeugendensystem.
 
-    \( \Delta = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
-    von \( \mathscr{P} \). Nach Satz 2 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
-    \( \forall i \neq j \). \( \oversett{Satz 5}{\Rightarrow} \Delta \) 
+    \( \Delta_t^+ = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
+    von \( \mathscr{P} \). Nach Satz 5 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
+    \( \forall i \neq j \). \( \oversett{Satz 6}{\Rightarrow} \Delta \) 
     ist linear unabhängig.
 
     \( \Rightarrow \Pi \) ist eine Basis von \(V\).
@@ -140,28 +141,31 @@
     Analog hat \( B := A^{-1} \) auch nur nichtnegative 
     Einträge. \\
     Seien \( a_1, \ldots, a_n \) die Zeilen von \(A\) 
-    und \( b_1, \ldots, b_n \) die Zeilen von \(B\).
+    und \( b_1, \ldots, b_n \) die Spalten von \(B\).
     Da \( AB = I_n \), gilt 
     \[ a_1^t \bot b_i \;\forall i \in \set{2, \ldots, n}. \]
     (Einträge der Matrixmultiplikation ist Skalarprodukt 
     von \(i\)-ter Zeile und \(j\)-ter Spalte der Matrizen).
 
-    Es gibt maximal einen Index \( j \), für den der 
-    \( j \)-te Eintrag in \( b_2, \ldots, b_n \) 
-    \( 0 \) ist, sonst wäre es linear abhängig.
+    Maximal eine Zeile \( j \), für die Eintrag in allen 
+    \( b_2, \ldots, b_n \) gleich Null, sonst wäre 
+    \(B\) linear abhängig.
+
     \( \Rightarrow a_1 \) hat maximal einen 
-    nichtnull Eintrag (da \(a_1\) positiv).\\
+    nichtnull Eintrag (da \(a_1\) und \( b_2, \ldots, b_n \) nichtnegativ).\\
     Analog für \( a_i, i \in \set{1, \ldots, n} \).
 
     Da \(A\) bijektiv ist, hat \(A\) in jeder Zeile und 
     Spalte jeweils einen \\
     nichtnegativen Eintrag.
 
-    Da kein \( \lambda \cdot r \) eine Wurzel ist 
-    außer \( \lambda = 1 \), ist \( A \) eine 
-    Permutationsmatrix.
+    Da kein \( \lambda \cdot r \) nur für 
+    \( \lambda = 1 \) eine Wurzel ist, 
+    ist \( A \) eine Permutationsmatrix.
     \[ \Rightarrow \Pi_1 = \Pi_2. \]
 \end{bew}
+
+Beispiele
 
 \begin{satz} % Proposition 4.1.9
     % nicht unbedingt beweisen
@@ -191,12 +195,16 @@
     und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
     \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
 
-    Sei \( r \in \Delta^+ \). Nach Satz 7 gibt es 
+    Sei \( r \in \Delta^+ \). Nach Satz 10 gibt es 
     ein \( T \in \mathscr{G}_t \), sodass 
-    \( r_i := Tr \in \Pi \).
+    \( x := Tr \in \Pi \).\\
 
-    Es gilt nach letztem Vortrag (Satz 2.5):
-    \[ S_r = T^{-1} S_i T \in \mathscr{G}_t. \]
+    Erinnerung letzter Vortrag: (Satz 2.5)\\
+    Sei \( r \in V \) Wurzel von \( \mathscr{G} \). 
+    Für \( T \in \mathscr{G} \) ist \( Tr \) Wurzel von \(\mathscr{G}\), 
+    wenn \( Tr = x \), dann \( S_x = T S_r T^{-1} \in \mathscr{G} \).
+
+    \[ S_x = T^{-1} S_r T \in \mathscr{G}_t. \]
     \[ \Rightarrow \mathscr{G} \subset \mathscr{G}_t. \]
     Da \( \mathscr{G} \supset \mathscr{G}_t \) sowieso klar, gilt
     \[ \Rightarrow \mathscr{G} = \mathscr{G}_t. \]

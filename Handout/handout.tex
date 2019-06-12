@@ -2,12 +2,13 @@
 
 \SetHandoutTitle{Einfache Wurzeln}
 \SetUniversitaet{Karlsruher Institut für Technologie}
+\SetFakultaet{Fakultät für Mathematik}
 \SetDatum{17.06.2019}
 \SetSemester{Sommersemester 2019}
-\SetDozent{PD Dr.\ Volker Grimm, Dr.\ Ingrid Lenhardt}
+\SetDozent{Dr. Sebastian Grensing, Dr. Diego Corro}
 \SetReferent{Pavel Zwerschke}
 %\SetMatrikelnr{0815}
-\SetSeminar{Proseminar SS 2019 Endliche Spiegelungsgruppen}
+\SetSeminar{Endliche Spiegelungsgruppen}
 \SetLiteratur{handout}
 
 \hypersetup{
@@ -35,12 +36,6 @@
     \set{r \in \Delta \;\vert \; \scalarprod{t}{r} < 0} \) 
     aufteilen. 
 \end{defi}
-
-Sei \( r \in \Delta_t^+ \). \( \Rightarrow -r \in \Delta_t^- \), 
-da \( \scalarprod{t}{-r} = -\scalarprod{t}{r} \).\\
-\( \Rightarrow r \) und \( -r \) sind in 
-gegensätzlichen Mengen. 
-\( \Rightarrow \abs{\Delta_t^+} = \abs{\Delta_t^-}. \)
 
 \section{Einfache Wurzelsysteme}
 \begin{defi}[\( t \)-Basis]
@@ -91,34 +86,68 @@ gegensätzlichen Mengen.
     Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
     \( \Pi \) eine Basis für \( V \).
 \end{satz}
+\begin{bew}
+    \( \Delta \) erzeugt \( V \). (s. Vortrag \gqq{Wurzelsysteme})\\
+    Jedes \( r \in \Delta \) ist eine Linearkombination von 
+    Elementen in \( \Pi \Rightarrow \) \( \Pi \) ist Erzeugendensystem.
+
+    \( \Delta_t^+ = \set{r_1, \ldots, r_m} \) alle auf derselben Seite 
+    von \( \mathscr{P} \). Nach Satz 5 ist \( \scalarprod{r_i}{r_j} \leq 0 \)
+    \( \forall i \neq j \). \\\( \oversett{Satz 6}{\Rightarrow} \Pi \) 
+    ist linear unabhängig.
+
+    \( \Rightarrow \Pi \) ist eine Basis von \(V\).
+\end{bew}
 
 \begin{satz}
     Es gibt nur eine \( t \)-Basis von \( \Delta \).
 \end{satz}
-\newpage
+\begin{bew}
+    Es seien \( \Pi_1, \Pi_2\ t \)-Basen. Jede Wurzel in \( \Pi_1 \) ist eine nichtnegative 
+    Linearkombination von \( \Pi_2 \). \( \Rightarrow \) Basiswechselmatrix \(A\) von 
+    \( \Pi_2 \) nach \( \Pi_1 \) hat nur nichtnegative Einträge. Analog für \( B := A^{-1} \).
+
+    Seien \( a_1, \ldots, a_n \) die Zeilen von \(A\), \( b_1, \ldots, b_n \) die Spalten von \(B\).
+    Da \( AB = I_n \), gilt \( \forall i \in \set{2, \ldots, n}\ \scalarprod{a_1^t}{b_i} = 0 \).
+
+    Es gibt maximal eine Zeile \( j \), für die Eintrag in allen 
+    \( b_2, \ldots, b_n \) gleich Null, sonst wäre 
+    \(B\) linear abhängig. \( \Rightarrow a_1 \) hat maximal einen 
+    Nichtnull Eintrag. Analog für \( a_i, i \in \set{2, \ldots, n} \).
+
+    Da \(A\) bijektiv ist, hat \(A\) in jeder Zeile und 
+    Spalte jeweils einen nichtnegativen Eintrag.
+
+    Da kein \( \lambda \cdot r \) nur für 
+    \( \lambda = 1 \) eine Wurzel ist, 
+    ist \( A \) eine Permutationsmatrix.
+    \( \Rightarrow \Pi_1 = \Pi_2 \).
+\end{bew}
+
+%\newpage
 \begin{bsp}[\( \mathscr{G} = \mathscr{H}_2^4 \)]\leavevmode \\
     \begin{minipage}[c]{0.2\textwidth}
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=1.5]
             \draw[thin, gray] (-1.5,0) -- (1.5,0);
             \draw[thin, gray] (0,-1.5) -- (0,1.5);
-            \draw[->] (0,0) -- (0,1) node[right, scale=0.5] {\( 1 \)};
+            \draw[->] (0,0) -- (0,1) node[right, scale=0.75] {\( 1 \)};
             \draw[->] (0,0) -- (0,-1);
             \draw[->] (0,0) -- (-1,0);
-            \draw[->] (0,0) -- (1,0) node[above left, scale=0.5] {\( 1 \)};
-            \draw (1,0) node[above right, scale=0.5] {\( r_1 \)};
+            \draw[->] (0,0) -- (1,0) node[above left, scale=0.75] {\( 1 \)};
+            \draw (1,0) node[above right, scale=0.75] {\( r_1 \)};
             \draw[->] (0,0) -- (-1, 1);
-            \draw (-1, 1) node[above right, scale=0.5] {\( r_2 \)};        
+            \draw (-1, 1) node[above right, scale=0.75] {\( r_2 \)};        
             \draw[->] (0,0) -- (-1,-1);
             \draw[->] (0,0) -- (1,1);
             \draw[->] (0,0) -- (1,-1);
-            \draw[->] (0,0) -- (0.77, 1.85) node[above right, scale=0.5] {\( t \)};
+            \draw[->] (0,0) -- (0.77, 1.85) node[above right, scale=0.75] {\( t \)};
             \draw[dashed] (-1.3,-0.77 / 1.85 * -1.3) -- (1.3, -0.77 / 1.85 * 1.3) 
-            node[above right, scale=0.5] {\( t^\bot \)};
+            node[above right, scale=0.75] {\( t^\bot \)};
         \end{tikzpicture}
     \end{minipage}
     \begin{minipage}[c]{0.8\textwidth}
         \[ \Delta = \set{ \pm(1,0), \pm(0,1), (\pm 1, \pm 1) }. \]
-        \[ t = 2\left( \cos(\frac{3\pi}{8}), \sin(\frac{3\pi}{8}) \right). \]
+        \[ t = 2\left( \cos\left(\frac{3\pi}{8}\right), \sin\left(\frac{3\pi}{8}\right) \right). \]
         \[ \Rightarrow \Pi = \set{ (1,0), (-1, 1) }. \]
     \end{minipage}
 \end{bsp}
@@ -132,7 +161,7 @@ gegensätzlichen Mengen.
 \begin{satz}
     Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
     \mathscr{G}_t := \langle 
-    \set{S_i \;\vert\; r_i \in \Pi} \rangle \) so, dass 
+    \set{S_i \;\vert\; r_i \in \Pi} \rangle \), sodass 
     \( Tr \in \Pi \).
 \end{satz}
 
@@ -140,6 +169,21 @@ gegensätzlichen Mengen.
     Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
     erzeugen \( \mathscr{G} \).
 \end{satz}
+\begin{bew}
+    Da \( \mathscr{G} = \langle S_r \;\vert\; r \in \Delta \rangle \) 
+    und \( S_{-r} = S_r \), genügt es, zu zeigen, dass wenn 
+    \( r\in \Delta^+ \), dann \( S_r \in \mathscr{G}_t \).
 
-\makeliteratur{}
+    Sei \( r \in \Delta^+ \). \( \oversett{Satz 10}{\Rightarrow} \)
+    Es gibt ein \( T \in \mathscr{G}_t \), sodass 
+    \( r_i := Tr \in \Pi \).
+    \( \overundersett{letzter}{Vortrag 2.5}{\Longrightarrow} 
+    S_r = T^{-1} S_i T \in \mathscr{G}_t \).
+    
+    \( \Rightarrow \mathscr{G} \subset \mathscr{G}_t \). 
+    Da \( \mathscr{G} \supset \mathscr{G}_t \) sowieso klar, gilt
+    \( \Rightarrow \mathscr{G} = \mathscr{G}_t \).
+\end{bew}
+
+%\makeliteratur{}
 \end{document}

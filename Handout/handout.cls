@@ -124,6 +124,7 @@
 			  }	
 		\lfoot{}
 		\rhead{\Blank \small
+	 			\Dozent\\
 				Referent: \Referent\\
 				Datum: \Datum\\
 				\Semester\\
@@ -136,7 +137,7 @@
 		\renewcommand\headrulewidth{0.5pt}
 		\renewcommand\footrulewidth{0.5pt}
 		\chead{}
-		\cfoot{\thepage\ von \pageref{LastPage}}
+		\cfoot{\thepage}
 		\rhead{ \Blank \textbf{\small \HandoutTitle} \\  \small \textbf{\Datum} }
 		\lhead{ \small \Seminar \\ \Semester\ }
 		\lfoot{}

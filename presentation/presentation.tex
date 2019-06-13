@@ -29,9 +29,7 @@ Einfache Wurzeln}
     lässt sich durch einen Vektor
     \( 0 \neq r \in \mathscr{P}^{\bot} \)
     beschreiben:
-    \note{Tell joke about plants.}
-    \note{Make it short.}
-    \[ s_r(x) = x 
+    \[ S_r(x) = x 
     - 2\frac{\scalarprod{x}{r}}{\scalarprod{r}{r}} r \]
     \pause
     
@@ -100,7 +98,7 @@ Einfache Wurzeln}
     
     Da \( \Delta_t^+ = - \Delta_t^- \), ist jedes 
     \( r \in \Delta_t^- \) eine Linearkombination 
-    von Vektoren aus \( \Delta \) 
+    von Vektoren aus \( \Pi \) 
     mit ausschließlich nichtpositiven Koeffizienten.
 
     \pause
@@ -113,7 +111,9 @@ Einfache Wurzeln}
         die Linearkombination von \(x\) zur 
         \(t\)-Basis ausschließlich nichtnegativ ist.
 
-        Analog für \( t \)-negativ.
+        \( x \in V \) heißt \(t\)-negativ, wenn 
+        die Linearkombination von \(x\) zur 
+        \(t\)-Basis ausschließlich nichtpositiv ist.
     \end{defi}
     % Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
     % eindeutig.
@@ -168,7 +168,7 @@ Einfache Wurzeln}
 \begin{frame}{Beispiele}
     Sei \( \mathscr{G} = \mathscr{H}_2^4 \), 
     die vier Spiegelungen in \( \mathscr{G} \) 
-    generieren es.
+    erzeugen es.
     \[ \Delta = \set{ \pm(1,0), \pm(0,1), (\pm 1, \pm 1) }. \]
     \onslide<2->{Wähle \( t = 2( \cos(\frac{3\pi}{8}), \sin(\frac{3\pi}{8}) ) \).}
 
@@ -204,7 +204,7 @@ Einfache Wurzeln}
       \end{columns}
 \end{frame}
 
-\section{Spiegelungsgruppen generieren}
+\section{Spiegelungsgruppen erzeugen}
 \begin{frame}
     % Satz 9
     \begin{satz} % Proposition 4.1.9
@@ -241,9 +241,9 @@ Einfache Wurzeln}
 
 \begin{frame}{Abschluss}
     Für jede endliche Spiegelungsgruppe 
-    \( \mathscr{G} \) existiert eine Basis 
-    einfache \( t \)-Basis \( \Pi \) 
-    von \( V \). 
+    \( \mathscr{G} \) existiert eine 
+    einfache \( t \)-Basis \( \Pi \), 
+    die \( V \) erzeugt. 
     \pause
     
     Die Spiegelungen in 

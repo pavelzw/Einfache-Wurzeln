@@ -71,7 +71,7 @@
     Seien \( r_i, r_j \in \Pi, i \neq j \), es 
     sei \( S_i \) die Spiegelung an \( r_i \). 
 
-    Dann ist \( S_i r_i \in \Delta_t^+ \) und 
+    Dann ist \( S_i r_j \in \Delta_t^+ \) und 
     \( \scalarprod{r_i}{r_j} \leq 0 \).
 \end{satz}
 
@@ -109,7 +109,7 @@
     \( \Pi_2 \) nach \( \Pi_1 \) hat nur nichtnegative Einträge. Analog für \( B := A^{-1} \).
 
     Seien \( a_1, \ldots, a_n \) die Zeilen von \(A\), \( b_1, \ldots, b_n \) die Spalten von \(B\).
-    Da \( AB = I_n \), gilt \( \forall i \in \set{2, \ldots, n}\ \scalarprod{a_1^t}{b_i} = 0 \).
+    Da \( AB = I_n \), gilt \( \forall i \in \set{2, \ldots, n}\ \scalarprod{a_1^T}{b_i} = 0 \).
 
     Es gibt maximal eine Zeile \( j \), für die Eintrag in allen 
     \( b_2, \ldots, b_n \) gleich Null, sonst wäre 
@@ -152,7 +152,7 @@
         \[ \Rightarrow \Pi = \set{ (1,0), (-1, 1) }. \]
     \end{minipage}
 \end{bsp}
-\section{Spiegelungsgruppen generieren}
+\section{Spiegelungsgruppen erzeugen}
 \begin{satz}
     Sei \( S_i \) die Spiegelung an 
     \( r_i \in \Pi = \set{r_1, \ldots, r_n} \).

@@ -29,6 +29,8 @@
     Es existiert mindestens eine \( t \)-Basis, 
     da \( \Delta \) endlich ist.
 \end{defi}
+\( \Pi \) sei ab jetzt immer eine \(t\)-Basis für ein 
+\(t\).
 
 \begin{defi}[\( t \)-positiv]
     \( x \in V \) heißt \(t\)-positiv, wenn 
@@ -37,7 +39,12 @@
 
     Analog für \( t \)-negativ.
 \end{defi}
+\begin{bem}
+    Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
+    eindeutig.
+\end{bem}
 
+% Satz 4
 % nicht unbedingt beweisen
 \begin{satz} % Proposition 4.1.4
     Seien \( r_i, r_j \in \Pi, i \neq j \) und 
@@ -46,20 +53,22 @@
     ist weder \( t \)-positiv noch \( t \)-negativ.
 \end{satz}
 
+% Satz 5
 \begin{satz} % Proposition 4.1.5
     Seien \( r_i, r_j \in \Pi, i \neq j \), es 
     sei \( S_i \) die Spiegelung an \( r_i \). 
 
-    Dann ist \( S_i r_i \in \Delta_t^+ \) und 
+    Dann ist \( S_i r_j \in \Delta_t^+ \) und 
     \( \scalarprod{r_i}{r_j} \leq 0 \).
 \end{satz}
 \begin{bew}
     Da \( S_i r_j \in \Delta \), ist \( S_i r_j \) 
     entweder positiv oder negativ. Da 
-    \[ S_i r_j = r_j - 2 \scalarprod{r_j}{r_i} r_i, \]
+    \[ S_i r_j = r_j - 2 
+    \frac{\scalarprod{r_j}{r_i}}{\scalarprod{r_i}{r_i}} r_i, \]
     mit \( \lambda_j = 1 \), muss 
     \( \lambda_i \geq 0 \), da sonst 
-    \( S_i r_i \notin \Delta \). 
+    \( S_i r_j \notin \Delta \). 
 
     \( \Rightarrow \scalarprod{r_i}{r_j} \leq 0 
     \Rightarrow S_i r_j \) 
@@ -73,6 +82,7 @@
     vom Winkel ist.
 \end{bem}
 
+% Satz 6
 \begin{satz} % Proposition 1.4.6
     Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
     Seite einer Hyperebene \( \mathscr{P} \), 
@@ -89,6 +99,12 @@
     manchen \( \lambda_i > 0 \), sodass 
     \[ \sum_{i=1}^k \lambda_i x_i 
     = \sum_{i=k+1}^m \mu_i x_i. \]
+    
+    \( \lambda_i, \mu_i \geq 0 \), da 
+    \( \sum_{i=1}^m \lambda_i r_i = 0 \) 
+    negative Koeffizienten nach rechts schreiben, 
+    dann werden sie positiv. Bei Bedarf 
+    Reihenfolge vertauschen.
 
     Dann gilt 
     \begin{align*}
@@ -113,6 +129,7 @@
     unabhängig sein.
 \end{bew}
 
+% Satz 7
 \begin{satz} % Theorem 1.4.7
     Sei \( \Pi \) eine \(t\)-Basis von \( \Delta \). Dann ist 
     \( \Pi \) eine Basis für \( V \).
@@ -130,6 +147,7 @@
     \( \Rightarrow \Pi \) ist eine Basis von \(V\).
 \end{bew}
 
+% Satz 8
 \begin{satz} % Proposition 4.1.8
     Es gibt nur eine \( t \)-Basis von \( \Delta \).
 \end{satz}
@@ -144,7 +162,7 @@
     Seien \( a_1, \ldots, a_n \) die Zeilen von \(A\) 
     und \( b_1, \ldots, b_n \) die Spalten von \(B\).
     Da \( AB = I_n \), gilt 
-    \[ \scalarprod{a_1^t}{b_i} = 0 \;\forall i \in \set{2, \ldots, n}. \]
+    \[ \scalarprod{a_1^T}{b_i} = 0 \;\forall i \in \set{2, \ldots, n}. \]
     (Eintrag der \( 1 \). Zeile, \( i \)-ten Spalte der Matrixmultiplikation (\( I_n \)))
 
     Es gibt maximal eine Zeile \( j \), für die Eintrag in allen 
@@ -159,7 +177,8 @@
     Spalte jeweils einen \\
     nichtnegativen Eintrag.
 
-    Da kein \( \lambda \cdot r \) nur für 
+    Sei \(r\) eine Wurzel aus \( \Pi_1 \).
+    Da \( \lambda \cdot r \) nur für 
     \( \lambda = 1 \) eine Wurzel ist, 
     ist \( A \) eine Permutationsmatrix.
     \[ \Rightarrow \Pi_1 = \Pi_2. \]
@@ -167,6 +186,7 @@
 
 Beispiele
 
+% Satz 9
 \begin{satz} % Proposition 4.1.9
     % nicht unbedingt beweisen
     Sei \( S_i \) die Spiegelung an 
@@ -175,7 +195,7 @@ Beispiele
     dann gilt \( S_i r \in \Delta^+ \).
 \end{satz}
 
-% Satz 7
+% Satz 10
 \begin{satz} % Proposition 4.1.11
     % nicht so interessant, nur satz hinschreiben
     Sei \( r \in \Delta^+ \). Es existiert ein \( T \in 
@@ -184,7 +204,7 @@ Beispiele
     \( Tr \in \Pi \).
 \end{satz}
 
-% Satz 8
+% Satz 11
 \begin{satz} % Theorem 4.1.12
     Die einfachen Spiegelungen \( S_1, \ldots, S_n \) 
     erzeugen \( \mathscr{G} \).

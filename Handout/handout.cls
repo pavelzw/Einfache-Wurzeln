@@ -116,7 +116,7 @@
 		\renewcommand\headrulewidth{0.5pt}
 		\renewcommand\footrulewidth{0.5pt}
 		\chead{}
-		\cfoot{\thepage\ von \pageref{LastPage}}
+		\cfoot{\thepage}
 		\lhead{ \small
 				\textbf{\Universitaet}\\
 				\textit{\Fakultaet}\\

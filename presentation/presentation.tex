@@ -33,30 +33,39 @@ Einfache Wurzeln}
     - 2\frac{\scalarprod{x}{r}}{\scalarprod{r}{r}} r \]
     \pause
     
-    Es gilt \( \forall x \in \mathscr{P}: s_r(x) = x \) 
-    und \( s_r(r) = -r \). \pause
+    Es gilt \( \forall x \in \mathscr{P}: S_r(x) = x \) 
+    und \( S_r(r) = -r \). \pause
 
     Da Basis \( B \subset \mathscr{P} \cup \set{r} \) 
     existiert, folgt aus linearer Fortsetzung, dass 
-    \( s_r \) Spiegelung an \( \mathscr{P} \) darstellt.
-
+    \( S_r \) Spiegelung an \( \mathscr{P} \) darstellt.
     \pause
-    Außerdem gilt \( s_r^2 = 1 \).
 
-    \( \Rightarrow \pm r \) sind Wurzeln von \( s_r \).
+    \( \Rightarrow \pm r \) sind Wurzeln von \( S_r \).
+    \pause
 
     \( \Delta = \set{ r \;\vert\; r \text{ ist Wurzel} } \) 
-    nennen wir Wurzelsystem.
+    nennen wir im Folgenden immer ein Wurzelsystem. \(r\) 
+    nennen wir im Folgenden immer eine Wurzel.
 \end{frame}
-\section{Positive und einfache Wurzeln}
-\begin{frame}{Problem mit Wurzelsystemen}
+\section{Motivation}
+\begin{frame}{Motivation}
+    Gegeben \( \mathscr{G} \) eine effektive Spiegelungsgruppe. 
+
+    Kennen bereits das Wurzelsystem \( \Delta \) von 
+    \( \mathscr{G} \). \pause 
+    
+    \( \Delta \) hilft uns bei 
+    Klassifikation von \( \mathscr{G} \). \pause
+
     Problem: \( \Delta \) kann sehr groß werden. \pause
 
     Lösungsansatz: Suchen nach linear unabhängigen 
     Untermengen von \( \Delta \), mit denen \( \Delta \)
-    konstruiert werden kann.
+    einfach konstruiert werden kann.
 \end{frame}
 
+\section{Einfache Wurzelsysteme}
 \begin{frame}{\( \Delta_t^+ \) und \( \Delta_t^- \)}
     \begin{defi}
         Sei \( t \in V \) so, dass \( \scalarprod{t}{r} \neq 0 
@@ -80,7 +89,6 @@ Einfache Wurzeln}
     \[ \Rightarrow \abs{\Delta_t^+} = \abs{\Delta_t^-}. \]
 \end{frame}
 
-\section{Einfache Wurzelsysteme}
 \begin{frame}{Definition \( t \)-Basis}
     \begin{defi}
         \( \Pi \subset \Delta_t^+ \) heißt \( t \)-Basis, 
@@ -103,6 +111,10 @@ Einfache Wurzeln}
 
     \pause
     Wird noch gezeigt: \( \Pi \) ist eine Basis.
+
+    \pause
+    Im Folgenden ist mit \( \Pi \) immer eine 
+    \(t\)-Basis gemeint.
 \end{frame}
 
 \begin{frame}{Definition \(t\)-positiv, \( t \)-negativ}
@@ -115,8 +127,6 @@ Einfache Wurzeln}
         die Linearkombination von \(x\) zur 
         \(t\)-Basis ausschließlich nichtpositiv ist.
     \end{defi}
-    % Hängt nicht von \( \Pi \) ab, da \( \Pi \) 
-    % eindeutig.
     \pause
     \begin{satz} % Proposition 4.1.4
         % satz 4
@@ -142,9 +152,7 @@ Einfache Wurzeln}
     % satz 6
     \begin{satz} % Proposition 1.4.6
         Seien \( x_1, \ldots, x_m \in V \) alle auf derselben 
-        Seite einer Hyperebene \( \mathscr{P} \), 
-        d. h. \( \langle x_i, x \rangle > 0 \;\forall i \) für 
-        ein \( x\in V \). \\
+        Seite einer Hyperebene \( \mathscr{P} \).
         Falls \( \scalarprod{x_i}{x_j} \leq 0 \) immer wenn 
         \( i \neq j \), dann ist \( \set{x_1, \ldots, x_m} \) 
         linear unabhängig.
@@ -179,7 +187,10 @@ Einfache Wurzeln}
                 &= \set{(1,0), (1,1), (0,1), (-1,1)}, \\}
                 \onslide<4->{\Pi &= \set{ (1,0), (-1,1) }.}
             \end{align*}
+            \onslide<5->{\centering{}Andere Wahlen für \( \Pi \) nicht 
+            möglich.}
         \end{column}
+        
         \begin{column}{0.3\textwidth}
          \begin{figure}
             \begin{tikzpicture}
